@@ -12,6 +12,24 @@ export default {
   name: "App",
   components: {
     navigation
+  },
+  data: function() {
+    return {
+      message: ""
+    };
+  },
+  methods: {
+    async getMessage() {
+      const token = await this.$auth.getTokenSilently();
+      console.log(token);
+      const response = await fetch("/api/restricted", {
+        Authorization: `Bearer ${token}`
+      });
+      console.log(await response.json());
+    }
+  },
+  mounted() {
+    this.getMessage();
   }
 };
 </script>
