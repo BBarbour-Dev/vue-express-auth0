@@ -3,9 +3,8 @@ import App from './App.vue';
 import router from './router';
 import store from './store';
 
-import { domain, clientId, audience } from './auth/config.json';
-
 import { Auth0Plugin } from './auth/auth0';
+import { domain, clientId, audience } from './auth/config';
 
 Vue.config.productionTip = false;
 
