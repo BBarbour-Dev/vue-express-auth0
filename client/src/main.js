@@ -4,7 +4,7 @@ import router from './router';
 import store from './store';
 
 import { Auth0Plugin } from './auth/auth0';
-import { domain, clientId, audience } from './auth/config';
+import { domain, clientId, audience } from './auth/auth0config';
 
 Vue.config.productionTip = false;
 
