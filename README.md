@@ -1,5 +1,7 @@
 # vue-express-auth0
 
+## Live Version: [https://vue-express-auth0.herokuapp.com/](https://vue-express-auth0.herokuapp.com/)
+
 This app I created to experiment with using Auth0 on the front end and back end, to secure my SPA routes and also my api routes. For most of it, I followed the examples found in the Auth0 doucmentation. It turned out to be inuitive.
 
 I plan to use this as a boilerplate for future apps I build myself. You are welcome to use it that way as well. However, there are a few important caveats that I will cover about how it's configured.
