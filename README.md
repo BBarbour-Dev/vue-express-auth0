@@ -6,7 +6,9 @@ I plan to use this as a boilerplate for future apps I build myself. You are welc
 
 ## Getting Started
 
-`npm install` inside of both the `client` and `server` folders, as they have separate node_modules and packages.
+`npm install` in the root folder and then the `client` folder, as they have separate node_modules and packages.
+
+To run the dev environment run `npm run client-dev' in one terminal and 'npm run server-dev' in another terminal.
 
 ## Server/Client
 
@@ -14,7 +16,9 @@ When running the dev environment, the client runs on `localhost:8080` on a webpa
 
 There's a proxy setup through `vue.config.js` that redirects to `localhost:5000`, to simulate how things work during production.
 
-To deploy make sure to `npm run build` in the client folder. It will create a `public` directory inside of the server folder with the static files and assets.
+To deploy make sure to `npm run build`, which runs the build script in the client folder. It will create a `public` directory inside of the server folder with the static files and assets.
+
+`npm run start` will fire up the production app.
 
 Hititng the`/api/restricted` route with a token provided by the Auth0 client puts it through the Auth0 middleware before resolving the endpoint logic. That's how you use Auth0 to seucre your api routes.
 
@@ -26,7 +30,7 @@ I would add http://localhost:8080, and http://localhost:5000 to your callback, a
 
 ## Env Variables
 
-I created two `.env` files, one in the `client` folder and other in the `server` folder.
+There are two `.env` files, one in the `client` folder with the VUE*APP* vars and other in the root folder for server vars.
 
 ### Server
 
