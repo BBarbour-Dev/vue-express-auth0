@@ -7,6 +7,6 @@ module.exports = {
         changeOrigin: true
       }
     }
-  }
-  // outputDir: '../server/public'
+  },
+  outputDir: '../server/public'
 };

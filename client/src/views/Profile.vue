@@ -1,12 +1,18 @@
 <template>
   <div class="profile">
     <h1>Profile</h1>
+    <p v-if="message">{{message}}</p>
   </div>
 </template>
 
 <script>
 export default {
   name: "profile",
+  data: function() {
+    return {
+      message: ""
+    };
+  },
   methods: {
     async getMessage() {
       const token = await this.$auth.getTokenSilently();
@@ -16,11 +22,11 @@ export default {
           Authorization: `Bearer ${token}`
         }
       });
-      console.log(await response.text());
+      const json = await response.json();
+      this.message = json.message;
     }
   },
   mounted() {
-    console.log("test");
     this.getMessage();
   }
 };
