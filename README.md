@@ -1,26 +1,22 @@
 # vue-express-auth0
 
-This app I created to experiment with using Auth0 on the front end and back end, to secure my SPA routes and also my api routes. Most of it I followed the examples found in the Auth0 doucmentation. It turned out to be wa
+This app I created to experiment with using Auth0 on the front end and back end, to secure my SPA routes and also my api routes. For most of it, I followed the examples found in the Auth0 doucmentation. It turned out to be inuitive.
 
 I plan to use this as a boilerplate for future apps I build myself. You are welcome to use it that way as well. However, there are a few important caveats that I will cover about how it's configured.
 
 ## Getting Started
 
-`npm install` inside of both the client and server folders, as they have separate node_modules and packages.
+`npm install` inside of both the `client` and `server` folders, as they have separate node_modules and packages.
 
 ## Server/Client
 
-Vue.js files into a public directory within the server folder. The app will be served from express from there.
+When running the dev environment, the client runs on `localhost:8080` on a webpack server, which bundles your Vue files and hot module reloads. The express server runs on `localhost:5000`, which provides the `/api` routes. It is being monitored and watched by `nodemon` and will reload after changes too.
 
-When running dev, the front end runs on localhost:8080 through a webpack dev server. The express server runs on localhost:5000.
+There's a proxy setup through `vue.config.js` that redirects to `localhost:5000`, to simulate how things work during production.
 
-For development, under client: `npm run serve`. Under server run 'npm run dev'
+To deploy make sure to `npm run build` in the client folder. It will create a `public` directory inside of the server folder with the static files and assets.
 
-To deploy make sure to `npm run build` in the client folder. It will create a public dir inside of the server folder with the static files and assets.
-
-There's a proxy setup through vue.config.js that redirects to localhost:5000, to simulate how things work during production.
-
-Hititng the /api/restricted route with a token provided by the Auth0 client puts it through the Auth0 middleware before resolving the endpoint logic.
+Hititng the`/api/restricted` route with a token provided by the Auth0 client puts it through the Auth0 middleware before resolving the endpoint logic. That's how you use Auth0 to seucre your api routes.
 
 ## Auth0 Config
 
@@ -30,7 +26,7 @@ I would add http://localhost:8080, and http://localhost:5000 to your callback, a
 
 ## Env Variables
 
-I created two .env files, one in the client folder and other in the server folder.
+I created two `.env` files, one in the `client` folder and other in the `server` folder.
 
 ### Server
 
