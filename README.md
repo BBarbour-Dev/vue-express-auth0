@@ -8,7 +8,7 @@ I plan to use this as a boilerplate for future apps I build myself. You are welc
 
 `npm install` in the root folder and then the `client` folder, as they have separate node_modules and packages.
 
-To run the dev environment run `npm run client-dev' in one terminal and 'npm run server-dev' in another terminal.
+To run the dev environment run `npm run client-dev` in one terminal and `npm run server-dev` in another terminal.
 
 ## Server/Client
 
