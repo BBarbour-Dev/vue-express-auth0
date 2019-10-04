@@ -8,5 +8,5 @@ module.exports = {
       }
     }
   },
-  outputDir: '../server/public'
+  outputDir: '../public'
 };
